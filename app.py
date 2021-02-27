@@ -55,7 +55,7 @@ b=[]
 st.write('# Fatal Accidents')
 st.write('## Batch 22 Deeksha S & Dinesh M')
 for i in a:
-    col1=st.selectbox(i,(1,0))
+    col1=st.selectbox(i,(0,1))
     b.append(col1)
 
 #col2=st.selectbox('Cross Winds Yes=1,No=0',(1,0))
@@ -67,8 +67,8 @@ model=pickle.load(open('LDA.pkl','rb'))
 a=st.button('Predict')
 if a:
     if model.predict(np.array(b).reshape(1,-1))==0:
-        st.write('The Person is who met with an accident is drunk')
+        st.write('The Person who met with an accident is drunk')
     else:
-        st.write('The Person is who met with an accident is  not drunk')
+        st.write('The Person who met with an accident is  not drunk')
 
 
