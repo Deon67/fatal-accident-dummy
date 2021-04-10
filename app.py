@@ -53,7 +53,7 @@ a=['harm_env_Curb','harm_env_Ditch','harm_env_EM',
 import numpy as np
 b=[]
 st.write('# Fatal Accidents')
-st.write('## Batch 22 Deeksha S & Dinesh M')
+st.write('## Project by Jai Harish, Bharani Gowtham and Rubesh')
 for i in a:
     col1=st.selectbox(i,(0,1))
     b.append(col1)
@@ -67,8 +67,8 @@ model=pickle.load(open('LDA.pkl','rb'))
 a=st.button('Predict')
 if a:
     if model.predict(np.array(b).reshape(1,-1))==0:
-        st.write('The Person who met with an accident is drunk')
+        st.write('The Person has met with an accident')
     else:
-        st.write('The Person who met with an accident is  not drunk')
+        st.write('The Person has not met with an accident')
 
 
